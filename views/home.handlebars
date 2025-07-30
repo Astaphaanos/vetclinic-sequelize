@@ -1,0 +1,12 @@
+
+<div class="lista-paciente-div">
+    <h1>Lista de Pacientes</h1>
+    {{#each users}}
+    <div class="pacientes-div">
+        <h2>{{this.nome}}</h2>
+        <p>{{this.especie}}</p>
+        <p>{{this.nomeDoTutor}}</p>
+        <a href="/users/{{this.id}}">Ver detalhes</a>
+    </div>
+    {{/each}}
+</div>

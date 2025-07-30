@@ -1,0 +1,21 @@
+
+<div class="petview-container">
+    <div class="view">
+        <h2>{{user.nome}}</h2>
+        <p><strong>Espécie: </strong>{{user.especie}}</p>
+        <p><strong>Raça:</strong> {{user.raca}}</p>
+        <p><strong>Idade:</strong> {{user.idade}} anos</p>
+        <p><strong>Sexo:</strong> {{user.sexo}}</p>
+        <p><strong>Tutor:</strong> {{user.nomeDoTutor}}</p>
+    </div>
+
+    <div class="form-container-btn">
+
+        <div class="form-delete">
+            <form action="/users/delete/{{user.id}}" method="POST">
+                <input type="submit" value="Excluir" class="btn-delete">
+            </form>
+        </div>
+        
+    </div>
+</div>
