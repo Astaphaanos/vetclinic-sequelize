@@ -2,6 +2,8 @@
 <form action="/users/create" method="post" class="form-container">
 <h1>Registar o pet</h1>
 
+<input type="hidden" name="VetId" value="{{vet.id}}">
+
     <div class="form-div">
         <label for="nome">Nome do pet:</label>
         <input type="text" placeholder="Digite o nome do pet" name="nome">
@@ -31,6 +33,17 @@
         <label for="nomeDoTutor">Nome do Tutor: </label>
         <input type="text" placeholder="Digite o nome do tutor" name="nomeDoTutor">
     </div>
+
+    <div class="form-div">
+        <label for="veterinario">Veterinário: </label>
+        <select name="vetId" required>
+            <option value="">Selecione o veterinário</option>
+            {{#each vets}}
+                <option value="{{this.id}}">{{this.nome}}</option>
+            {{/each}}
+        </select>
+    </div>
+    
 
     <div class="form-div">
         <input type="submit" value="Cadastrar" class="btn-form">

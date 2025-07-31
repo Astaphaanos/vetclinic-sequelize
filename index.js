@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars')
 
 const conn = require('./db/conn')
 const User = require('./models/User')
+const Vet = require('./models/Vet')
 
 const app = express()
 
@@ -51,6 +52,31 @@ app.post('/users/delete/:id', async(req,res) => {
     res.redirect('/')
 })
 
+//* UPDATE 
+app.get('/users/update/:id', async(req,res) => {
+    const id = req.params.id
+
+    const user = await User.findOne({ raw: true, where: {id:id} })
+
+    res.render('updatepet', {user})
+})
+
+app.post('/users/update', async(req,res) => {
+    const {id, name, especie, raca, idade, sexo, nomeDoTutor} = req.body
+
+    const userData = {
+        id,
+        name,
+        especie,
+        raca,
+        idade,
+        sexo,
+        nomeDoTutor,
+    }
+
+    await User.update(userData, {where: {id:id} })
+    res.redirect('/')
+})
 
 //* HOME PAGE
 app.get('/', async(req,res) => {
@@ -59,6 +85,30 @@ app.get('/', async(req,res) => {
     res.render('home', {users: users})
 })
 
+//* VET TABLE
+
+//! Renderizando os veterinários
+app.get('/vet/vetview', async(req,res) => {
+    res.render('vetview')
+})
+
+//! Renderizando o formulários para registar o vet
+app.get('/vet/create', async(req,res) => {
+    res.render('vetregister')
+})
+
+//* POST vet
+app.post('/vet/create', async(req,res) => {
+    const veterinario = req.body.veterinario
+
+    const vet = {
+        veterinario,
+    }
+
+    await Vet.create(vet)
+
+    res.redirect('/')
+})
 
 conn.sync().then(() => {  
   app.listen(3000)

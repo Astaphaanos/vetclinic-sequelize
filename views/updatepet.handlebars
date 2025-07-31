@@ -1,0 +1,41 @@
+
+<form action="/users/update" method="post" class="form-container">
+<h1>Editar paciente</h1>
+
+<input type="hidden" name="id" value="{{user.id}}">
+
+
+    <div class="form-div">
+        <label for="nome">Nome do pet:</label>
+        <input type="text" placeholder="Digite o nome do pet" name="nome" value="{{user.name}}">
+    </div>
+
+    <div class="form-div">
+        <label for="especie">Espécie: </label>
+        <input type="text" placeholder="Digite a espécie do pet" name="especie" value="{{user.especie}}">
+    </div>
+
+    <div class="form-div">
+        <label for="raca">Raça: </label>
+        <input type="text" placeholder="Digite a raça do pet" name="raca" value="{{user.raca}}">
+    </div>
+
+    <div class="form-div">
+        <label for="idade">Idade: </label>
+        <input type="number" placeholder="Digite a idade do pet" name="idade" value="{{user.idade}}">
+    </div>
+
+    <div class="form-div">
+        <label for="sexo">Sexo: </label>
+        <input type="text" placeholder="Digite o sexo do pet" name="sexo" value="{{user.sexo}}">
+    </div>
+
+    <div class="form-div">
+        <label for="nomeDoTutor">Nome do Tutor: </label>
+        <input type="text" placeholder="Digite o nome do tutor" name="nomeDoTutor" value="{{user.nomeDoTutor}}">
+    </div>
+
+    <div class="form-div">
+        <input type="submit" value="Atualizar" class="btn-form">
+    </div>
+</form>
