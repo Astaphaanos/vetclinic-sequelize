@@ -1,12 +1,16 @@
 
 <div class="petview-container">
+
+    <input type="hidden" name="VetId" value="{{vet.id}}">
+
     <div class="view">
         <h2>{{user.nome}}</h2>
-        <p><strong>Espécie: </strong>{{user.especie}}</p>
+        <p><strong>Espécie: </strong>{{user.especie}}</p> 
         <p><strong>Raça:</strong> {{user.raca}}</p>
         <p><strong>Idade:</strong> {{user.idade}} anos</p>
         <p><strong>Sexo:</strong> {{user.sexo}}</p>
         <p><strong>Tutor:</strong> {{user.nomeDoTutor}}</p>
+        <p><strong>Veterinário responsável: </strong>{{user.Vet.veterinario}}</p>
     </div>
 
     <div class="form-container-btn">

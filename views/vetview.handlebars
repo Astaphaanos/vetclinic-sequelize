@@ -2,6 +2,13 @@
 <div class="vet-list">
     <h2>Veterinários Registrados: </h2>
     {{#each vet}}
-        <p>#{{this.veterinario}}</p>
+        <div class="vets-div">
+            <p>Dr(a). {{this.veterinario}}</p>
+            
+            <form action="/vet/delete/{{this.id}}" method="post">
+                <input type="submit" value="Excluir" class="btn-vet-delete">
+            </form>
+        </div>
     {{/each}}
 </div>
+

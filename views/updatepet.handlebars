@@ -4,7 +4,6 @@
 
 <input type="hidden" name="id" value="{{user.id}}">
 
-
     <div class="form-div">
         <label for="nome">Nome do pet:</label>
         <input type="text" placeholder="Digite o nome do pet" name="nome" value="{{user.name}}">
@@ -33,6 +32,18 @@
     <div class="form-div">
         <label for="nomeDoTutor">Nome do Tutor: </label>
         <input type="text" placeholder="Digite o nome do tutor" name="nomeDoTutor" value="{{user.nomeDoTutor}}">
+    </div>
+
+    <div class="form-div">
+        <label for="vet">Veterinário: </label>
+        <select name="VetId" id="VetId" required>
+            <option>Selecione o veterinário</option>
+            {{#each vet}}
+                <option value="{{this.id}}">
+                    {{this.veterinario}}
+                </option>
+            {{/each}}
+        </select>
     </div>
 
     <div class="form-div">

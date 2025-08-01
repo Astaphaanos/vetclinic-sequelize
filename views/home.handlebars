@@ -4,8 +4,9 @@
     {{#each users}}
         <div class="pacientes-div">
             <h2>{{this.nome}}</h2>
-            <p>{{this.especie}}</p>
-            <p>{{this.nomeDoTutor}}</p>
+            <p>Espécie: {{this.especie}}</p>
+            <p>Tutor: {{this.nomeDoTutor}}</p>
+            <p>Veterinário responsável: {{this.Vet.veterinario}}</p>
             <a href="/users/{{this.id}}">Ver detalhes</a>
         </div>
     {{/each}}
